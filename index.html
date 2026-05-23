@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Dia dos Namorados! ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <div id="tela-intro" class="tela ativo">
+            <h1>Feliz Dia dos Namorados! ❤️</h1>
+            <p class="texto-intro">Eu sei que você me ama (eu amo mais), mas será que você conhece nosso relacionamento de verdade? Ein ein</p>
+            <button class="btn-start" onclick="iniciarQuiz()">Começar Quiz</button>
+        </div>
+
+        <div id="tela-quiz" class="tela">
+            <div id="pergunta-texto" class="pergunta">Carregando pergunta...</div>
+            <div class="botoes">
+                <button class="btn-sim" onclick="respostaSim()">SIM</button>
+                <button class="btn-nao" id="btn-nao" onmouseover="fugaBotao()" onclick="fugaBotao()">NÃO</button>
+            </div>
+        </div>
+
+        <div id="tela-final" class="tela">
+            <h2>Você acertou tudo! Parabénss meu amorzinhoo! </h2>
+            <div class="conteudo-final">
+                <div class="foto-container">
+                    <img src="foto1.jpg" alt="Nossa Foto Juntos">
+                </div>
+                <div class="texto-container">
+                    <p>
+                        "Oi meu amor, tudo bem? Nosso primeiro dia dos namorados juntos pipipi tô muito feliz de estar com vc hoje, de poder comemorar contigo. Você me faz muito feliz sabia? Desde o dia que a gente se conheceu, minha vida mudou pra mil vezes melhor. Você me transformou, com teu amor e teu cuidado, vc me mudou e eu fico muito feliz de ter mudado pra ser melhor pra vc. Vc também mudou, e isso te faz um namorado incrível, obrigada por tudo que vc fez por mim, que vc faz todos os dias. Sem vc eu não seria ninguém, não me vejo mais sem vc meu amor. 
+                        Você é meu tudinho, meu amor, minha pessoa favorita do mundo inteirinho. 
+                        
+                        Obrigada por tudo, por ser o melhor namorado, por fazer de tudo por mim e por me amar de verdade. Eu te amo muito mesmo meu amor, um beijo beijo beijo, feliz nosso primeiro dia dos namorados, o primeiro de muitos!"
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffe6e6;
+    color: #4a0e17;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 750px;
+    width: 100%;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+h1, h2 {
+    color: #d63031;
+    margin-top: 0;
+}
+
+/* Lógica de esconder/mostrar as telas */
+.tela {
+    display: none;
+}
+
+.tela.ativo {
+    display: block;
+}
+
+/* Estilo da Tela 1 */
+.texto-intro {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.btn-start {
+    background-color: #d63031;
+    color: white;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+}
+
+.btn-start:hover {
+    background-color: #b32424;
+    transform: scale(1.05);
+}
+
+/* Estilo da Tela 2 (Quiz) */
+.pergunta {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    min-height: 60px;
+}
+
+.botoes {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+}
+
+/* Estilo dos Botões Gerais */
+button {
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-sim {
+    background-color: #cc2ebf;
+    color: white;
+}
+
+.btn-sim:hover {
+    background-color: #a84ace;
+    transform: scale(1.1);
+}
+
+.btn-nao {
+    background-color: #e74c3c;
+    color: white;
+    position: relative;
+}
+
+/* Estilo da Tela Final (Lado a Lado) */
+.conteudo-final {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap; /* Garante que fique bom no celular também */
+}
+
+.foto-container {
+    flex: 1;
+    min-width: 250px;
+}
+
+.foto-container img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px;
+    border: 5px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.texto-container {
+    flex: 1;
+    min-width: 250px;
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* --- AJUSTES EXCLUSIVOS PARA CELULAR --- */
+@media (max-width: 600px) {
+    body {
+        padding: 10px; /* Margem menor nas bordas da tela */
+    }
+
+    .container {
+        padding: 20px; /* Deixa o cartão interno mais compacto */
+    }
+
+    h1 {
+        font-size: 1.6rem; /* Diminui um pouco o título para não quebrar linha feio */
+    }
+
+    .pergunta {
+        font-size: 1.2rem; /* Ajusta o tamanho da pergunta */
+    }
+
+    /* Faz a foto e o texto ficarem um embaixo do outro no celular */
+    .conteudo-final {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .foto-container img {
+        max-width: 100%; /* A foto ocupa a largura máxima disponível no celular */
+    }
+
+    .texto-container {
+        text-align: center; /* Centraliza o texto para ficar mais bonito no formato vertical */
+    }
+}
