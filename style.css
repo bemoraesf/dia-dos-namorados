@@ -156,8 +156,23 @@ button {
     .foto-container img {
         max-width: 100%; /* A foto ocupa a largura máxima disponível no celular */
     }
+    
 
     .texto-container {
         text-align: center; /* Centraliza o texto para ficar mais bonito no formato vertical */
     }
+}
+
+
+/* Cor azul e estilo para o link do contador */
+.link-contador {
+    color: #3498db !important;
+    text-decoration: underline !important;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.link-contador:hover {
+    color: #2980b9 !important;
 }
