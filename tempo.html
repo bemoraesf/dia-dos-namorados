@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Tempo Juntos ❤️</title>
+    <style>
+        /* --- VISUAL COMBINANDO COM O SITE PRINCIPAL --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffe6e6;
+            color: #4a0e17;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .container-contador {
+            max-width: 500px;
+            width: 100%;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #d63031;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitulo {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 30px;
+            color: #7f8c8d;
+        }
+
+        /* Estilo dos blocos do contador */
+        .contador-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .bloco {
+            background-color: #fff0f0;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #ffccd5;
+        }
+
+        .numero {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #d63031;
+            display: block;
+        }
+
+        .rotulo {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #7f8c8d;
+        }
+
+        /* Botão para Voltar */
+        .btn-voltar {
+            display: inline-block;
+            background-color: #7f8c8d;
+            color: white;
+            text-decoration: none;
+            padding: 10px 25px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: all 0.2s;
+            margin-top: 10px;
+        }
+
+        .btn-voltar:hover {
+            background-color: #616c6d;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-contador">
+        <h1>Cada segundo com você... ❤️</h1>
+        <p class="subtitulo">Já se passaram exatamente:</p>
+
+        <div class="contador-grid">
+            <div class="bloco">
+                <span class="numero" id="dias">00</span>
+                <span class="rotulo">Dias</span>
+            </div>
+            <div class="bloco">
+                <span class="numero" id="horas">00</span>
+                <span class="rotulo">Horas</span>
+            </div>
+            <div class="bloco">
+                <span class="numero" id="minutos">00</span>
+                <span class="rotulo">Minutos</span>
+            </div>
+            <div class="bloco">
+                <span class="numero" id="segundos">00</span>
+                <span class="rotulo">Segundos</span>
+            </div>
+        </div>
+
+        <p style="font-size: 1.1rem; font-weight: bold; margin-bottom: 25px;">...de muito amor, risadas e cumplicidade! 🌹</p>
+
+        <a href="index.html" class="btn-voltar">⬅️ Voltar</a>
+    </div>
+
+    <script>
+        // ⚠️ COLOQUE A DATA DO SEU INÍCIO DE NAMORO AQUI ABAIXO!
+        // Formato padrão americano: "Ano-Mês-DiaTOrigem:Hora:Minuto:Segundo"
+        // Exemplo: 12 de Outubro de 2024 às 20:30:00 -> '2024-10-12T20:30:00'
+        const dataInicio = new Date('2025-12-28T00:00:00'); 
+
+        function atualizarContador() {
+            const agora = new Date();
+            const diferenca = agora - dataInicio; // Diferença em milissegundos
+
+            // Cálculos matemáticos para converter milissegundos em tempo real
+            const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+
+            // Adiciona um zero à esquerda caso o número seja menor que 10 (ex: 05 segundos)
+            document.getElementById('dias').innerText = dias;
+            document.getElementById('horas').innerText = horas < 10 ? '0' + horas : horas;
+            document.getElementById('minutos').innerText = minutos < 10 ? '0' + minutos : minutos;
+            document.getElementById('segundos').innerText = segundos < 10 ? '0' + segundos : segundos;
+        }
+
+        // Executa a função a cada 1 segundo para o contador rodar em tempo real
+        setInterval(atualizarContador, 1000);
+
+        // Executa uma vez logo ao abrir a página para não começar zerado
+        atualizarContador();
+    </script>
+</body>
+</html>
